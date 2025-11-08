@@ -15,7 +15,7 @@ spec:
         app: todo-api
     spec:
       containers:
-        - name: vigorous_leakey
+        - name: todo-api
           image: todo.api:latest
           ports:
             - containerPort: 8080
