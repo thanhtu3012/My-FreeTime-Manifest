@@ -15,7 +15,7 @@ spec:
         app: todo-api
     spec:
       containers:
-        - name: todo-api
-          image: todo.api:latest
+        - name: todo.api
+          image: galaxy121996/todo.api:latest
           ports:
             - containerPort: 8080
