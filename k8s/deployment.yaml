@@ -4,11 +4,11 @@ metadata:
   name: todo-api
   annotations:
     # image updater config
-    argocd-image-updater.argoproj.io/image-list: todo-api=galaxy121996/todo-api
-    argocd-image-updater.argoproj.io/todo-api.update-strategy: semver
-    argocd-image-updater.argoproj.io/todo-api.allow-tags: regexp:^v?[0-9]+\.[0-9]+\.[0-9]+$
-    argocd-image-updater.argoproj.io/write-back-method: git
-    argocd-image-updater.argoproj.io/git-branch: main
+    todo-api-image-updater.argoproj.io/image-list: todo-api=galaxy121996/todo-api
+    todo-api-image-updater.argoproj.io/todo-api.update-strategy: semver
+    todo-api-image-updater.argoproj.io/todo-api.allow-tags: regexp:^v?[0-9]+\.[0-9]+\.[0-9]+$
+    todo-api-image-updater.argoproj.io/write-back-method: git
+    todo-api-image-updater.argoproj.io/git-branch: main
 spec:
   replicas: 1
   selector:
