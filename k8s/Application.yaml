@@ -9,6 +9,7 @@ spec:
     repoURL: https://github.com/thanhtu3012/My-FreeTime-Manifest.git
     targetRevision: main
     path: k8s
+    kustomize: {}
   destination:
     server: https://kubernetes.default.svc
     namespace: todo-api
