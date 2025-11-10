@@ -5,8 +5,10 @@ metadata:
   annotations:
     # image updater config
     argocd-image-updater.argoproj.io/image-list: todo-api=galaxy121996/todo-api
-    argocd-image-updater.argoproj.io/todo-api.update-strategy: latest
+    argocd-image-updater.argoproj.io/todo-api.update-strategy: semver
+    argocd-image-updater.argoproj.io/todo-api.allow-tags: regexp:^v?[0-9]+\.[0-9]+\.[0-9]+$
     argocd-image-updater.argoproj.io/write-back-method: git
+    argocd-image-updater.argoproj.io/git-branch: main
 spec:
   replicas: 1
   selector:
@@ -19,6 +21,6 @@ spec:
     spec:
       containers:
         - name: todo-api
-          image: galaxy121996/todo-api:latest
+          image: galaxy121996/todo-api:v1.0.0
           ports:
             - containerPort: 8080
