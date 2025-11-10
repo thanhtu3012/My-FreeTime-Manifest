@@ -2,8 +2,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: todo-api
-  labels:
-    app: todo-api
+  annotations:
+    # image updater config
+    argocd-image-updater.argoproj.io/image-list: todo-api=galaxy121996/todo-api
+    argocd-image-updater.argoproj.io/todo-api.update-strategy: latest
+    argocd-image-updater.argoproj.io/write-back-method: git
 spec:
   replicas: 1
   selector:
