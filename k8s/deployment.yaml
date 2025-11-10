@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: todo-api
+  namespace: todo-api
   annotations:
     # image updater config
     todo-api-image-updater.argoproj.io/image-list: todo-api=galaxy121996/todo-api
