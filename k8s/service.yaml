@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: todo-api
+  namespace: default
+spec:
+  type: NodePort   # dùng NodePort để có thể truy cập từ máy local
+  selector:
+    app: todo-api  # phải trùng với label trong deployment.yaml
+  ports:
+    - port: 80         # port service lắng nghe trong cluster
+      targetPort: 8080 # port trong container (theo Dockerfile EXPOSE 8080)
+      nodePort: 30080  # port public trên localhost
+      protocol: TCP
