@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: todo-api
-  namespace: argocd
+  namespace: todo-api
   annotations:
     argocd-image-updater.argoproj.io/image-list: todo-api=galaxy121996/todo-api:v1.0.x
     argocd-image-updater.argoproj.io/todo-api.update-strategy: semver
